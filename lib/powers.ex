@@ -8,4 +8,18 @@ defmodule Powers do
   defp raise(_, 0, acc), do: acc
   defp raise(x, n, acc), do: raise(x, n - 1, x * acc)
 
+  def nth_root(x, n), do: nth_root(x, n, x / 2.0)
+  defp nth_root(x, n, approx) do
+    f = raise(approx, n) - x
+    f_prime = n * raise(approx, n - 1)
+    next = approx - f / f_prime
+    IO.puts next
+    change = abs(next - approx)
+
+    if change < 1.0e-8 do
+      next
+    end
+
+    nth_root(x, n, next)
+  end
 end
