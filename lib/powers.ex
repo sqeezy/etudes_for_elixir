@@ -13,13 +13,12 @@ defmodule Powers do
     f = raise(approx, n) - x
     f_prime = n * raise(approx, n - 1)
     next = approx - f / f_prime
-    IO.puts next
     change = abs(next - approx)
 
     if change < 1.0e-8 do
       next
+    else
+      nth_root(x, n, next)
     end
-
-    nth_root(x, n, next)
   end
 end

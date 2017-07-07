@@ -10,6 +10,6 @@ defmodule PowersTest do
   end
 
   test "root works" do
-    assert Powers.nth_root(9,2) == 2
+    assert Powers.nth_root(9,2) == 3.0
   end
 end
