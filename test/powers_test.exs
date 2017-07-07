@@ -8,4 +8,8 @@ defmodule PowersTest do
     assert Powers.raise(12345, 0) == 1
     assert Powers.raise(12345, 1) == 12345
   end
+
+  test "root works" do
+    assert Powers.nth_root(9,2) == 2
+  end
 end
